@@ -87,7 +87,7 @@ function countdown(number) {
     number *= -1;
     negative = true;
   }
-  while (i <= number) {
+  do {
     count = number - i;
     i++;
     if (negative) {
@@ -95,7 +95,7 @@ function countdown(number) {
     } else {
       console.log(count);
     }
-  }
+  } while (i < number);
   return;
 }
 
