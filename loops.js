@@ -117,7 +117,7 @@ function addDigits(number) {
 
 function findGreater(numberArray) {
   let i = 0;
-  let greatestNumber = 0;
+  let greatestNumber = numberArray[0];
   while (i < numberArray.length) {
     if (numberArray[i] > greatestNumber) {
       greatestNumber = numberArray[i];
