@@ -213,3 +213,127 @@ function isNumberPrime(number) {
   } while (i < number);
   return isPrime;
 }
+
+let goles=[{equipo: 'Argentina', jugador: 'lionel messi'}, {equipo: 'Argentina', jugador: 'abdulhamil'}]
+function contarGoles(goals) {
+  let i = 0
+  let equipo1 = ''
+  let golesEquipo1 = 0
+  let golesEquipo2 = 0
+  while (i < goals.length){
+    if (!equipo1) {
+      equipo1 = goals[0].equipo
+    }
+    if (goals[i].equipo === equipo1) {
+      golesEquipo1++
+    }else{
+      golesEquipo2++
+    }
+    i++
+  }
+  return `El primer equipo metio ${golesEquipo1} goles, el segundo equipo metio ${golesEquipo2}`
+}
+
+let jugada = ["Messi", "Di Maria", "Doye", "fuera"];
+function contarToques(play){
+  let i = 0
+  while (play[i] !== 'fuera'){
+    i++
+  }
+  return `Hubo ${i} toques`
+}
+
+function practicarSaques(){
+  let i = 0
+  let saque = 0
+  do{
+    saque = Math.floor(Math.random() * 100)
+    if(saque < 70){
+      console.log('saco mal')
+    }else{
+      console.log('saco bien')
+    }
+  }while(saque < 70)
+  return
+}
+
+let jugadoresQueAnotaron = ["Messi", "Di Maria", "Messi", "Riquelme", "Maradona"];
+function recuentoGoleadores(players) {
+  let i = 0
+  let uniques = []
+  do{
+    if (!uniques.includes(players[i])) {
+      uniques.push(players[i])
+    }
+    i++
+  }while(i < players.length)
+  return uniques.length
+}
+
+let rendimientoJugadores = { "Enzo Pérez": 11.5, "Frank Fabra": 9.8, "Nicolás De La Cruz":12.3, "Cristian Medina": 10.2 }
+function analizarRendimiento(players){
+  let mvps = []
+  let i = 0
+  let playersPerformance = Object.entries(players)
+  while(i < playersPerformance.length){
+    if (playersPerformance[i][1] > 10) {
+      mvps.push(playersPerformance[i][0])
+    }
+    i++
+  }
+  return mvps
+}
+
+let tarjetasPartido = {
+  'Ponzio' : {amarillas : 2, rojas : 4},
+  'Fabra' : {amarillas : 4, rojas : 1},
+}
+function resumenTarjetas(playersCards){
+  let i = 0
+  let playersAndCards = Object.entries(playersCards)
+  while(i < playersAndCards.length){
+    console.log(`El jugador ${playersAndCards[i][0]} recibio ${playersAndCards[i][1].amarillas} amarillas y ${playersAndCards[i][1].rojas} rojas` )
+    i++
+  }
+  return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
