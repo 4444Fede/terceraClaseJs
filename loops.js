@@ -145,4 +145,130 @@ function separateOddAndEvenFrom1to20() {
   } while (i < 21);
   return `Hay ${countEvens} pares del 1 al 20 y son: ${evenNumbers} \nHay ${countOdds} impares del 1 al 20 y son: ${oddNumbers}`;
 }
-console.log(separateOddAndEvenFrom1to20());
+
+function calculatePromedio(grades){
+  let i = 0
+  let promedio = 0
+  while(i < grades.length){
+    promedio += grades[i]
+    i++
+  }
+  return promedio/i
+}
+
+let usuarios = ["juan", "maria", "admin", "carlos"];
+let usuarioBuscado = "admin";
+
+function verificarUsuario(usernames, searchedUser){
+  let i = 0
+  let found = false
+  while(i < usernames.length){
+    if (searchedUser === usernames[i]) {
+      found = true
+    }
+    i++
+  }
+  return found ? 'Usuario encontrado' : 'Usuario no encontrado'
+}
+ 
+let contraseñas = ["password", "1234567", "supersecret", "contraseña123"]; 
+function verificarContrasenias(passwords) {
+  let i = 0
+  let passwordsEigthLetters = 0
+  while(i < passwords.length){
+    if (passwords[i].length > 8) {
+      passwordsEigthLetters++
+    }
+    i++
+  }
+  return `${passwordsEigthLetters} contraseñas que tienen 8 letras`
+}
+
+let correos = ["correo1@example.com", "correo2@example", "correo3@example.com"];
+function verificarCorreo(argument) {
+  let validMails = 0
+  let i = 0
+  while(i<correos.length){
+    if (correos[i].includes('@') && correos[i].includes('.')) {
+      validMails++
+    }
+    i++
+  }
+  return validMails === correos.length ? 'Todos los correos son validos' : 'Correo invalido encontrado'
+}
+
+function isNumberPrime(number){
+  let i = 1
+  let isPrime = true
+  if (number < 0) {
+    return 'Un numero negativo no puede ser primo'
+  }
+  do{
+    i++
+    if (number%i === 0 && i !== number) {
+      isPrime = false
+    }
+  }while(i<number)
+  return isPrime
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
