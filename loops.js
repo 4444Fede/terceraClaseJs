@@ -202,7 +202,7 @@ function verificarCorreo(argument) {
 function isNumberPrime(number) {
   let i = 1;
   let isPrime = true;
-  if (number < 0) {
+  if (number <= 0) {
     return "Un numero negativo no puede ser primo";
   }
   do {
