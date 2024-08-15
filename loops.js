@@ -214,144 +214,169 @@ function isNumberPrime(number) {
   return isPrime;
 }
 
-let goles=[{equipo: 'Argentina', jugador: 'lionel messi'}, {equipo: 'Argentina', jugador: 'abdulhamil'}]
+let goles = [
+  { equipo: "Argentina", jugador: "lionel messi" },
+  { equipo: "Argentina", jugador: "abdulhamil" },
+];
 function contarGoles(goals) {
-  let i = 0
-  let equipo1 = ''
-  let golesEquipo1 = 0
-  let golesEquipo2 = 0
-  while (i < goals.length){
+  let i = 0;
+  let equipo1 = "";
+  let golesEquipo1 = 0;
+  let golesEquipo2 = 0;
+  while (i < goals.length) {
     if (!equipo1) {
-      equipo1 = goals[0].equipo
+      equipo1 = goals[0].equipo;
     }
     if (goals[i].equipo === equipo1) {
-      golesEquipo1++
-    }else{
-      golesEquipo2++
+      golesEquipo1++;
+    } else {
+      golesEquipo2++;
     }
-    i++
+    i++;
   }
-  return `El primer equipo metio ${golesEquipo1} goles, el segundo equipo metio ${golesEquipo2}`
+  return `El primer equipo metio ${golesEquipo1} goles, el segundo equipo metio ${golesEquipo2}`;
 }
 
 let jugada = ["Messi", "Di Maria", "Doye", "fuera"];
-function contarToques(play){
-  let i = 0
-  while (play[i] !== 'fuera'){
-    i++
+function contarToques(play) {
+  let i = 0;
+  while (play[i] !== "fuera") {
+    i++;
   }
-  return `Hubo ${i} toques`
+  return `Hubo ${i} toques`;
 }
 
-function practicarSaques(){
-  let i = 0
-  let saque = 0
-  do{
-    saque = Math.floor(Math.random() * 100)
-    if(saque < 70){
-      console.log('saco mal')
-    }else{
-      console.log('saco bien')
+function practicarSaques() {
+  let i = 0;
+  let saque = 0;
+  do {
+    saque = Math.floor(Math.random() * 100);
+    if (saque < 70) {
+      console.log("saco mal");
+    } else {
+      console.log("saco bien");
     }
-  }while(saque < 70)
-  return
+  } while (saque < 70);
+  return;
 }
 
-let jugadoresQueAnotaron = ["Messi", "Di Maria", "Messi", "Riquelme", "Maradona"];
+let jugadoresQueAnotaron = [
+  "Messi",
+  "Di Maria",
+  "Messi",
+  "Riquelme",
+  "Maradona",
+];
 function recuentoGoleadores(players) {
-  let i = 0
-  let uniques = []
-  do{
+  let i = 0;
+  let uniques = [];
+  do {
     if (!uniques.includes(players[i])) {
-      uniques.push(players[i])
+      uniques.push(players[i]);
     }
-    i++
-  }while(i < players.length)
-  return uniques.length
+    i++;
+  } while (i < players.length);
+  return uniques.length;
 }
 
-let rendimientoJugadores = { "Enzo Pérez": 11.5, "Frank Fabra": 9.8, "Nicolás De La Cruz":12.3, "Cristian Medina": 10.2 }
-function analizarRendimiento(players){
-  let mvps = []
-  let i = 0
-  let playersPerformance = Object.entries(players)
-  while(i < playersPerformance.length){
+let rendimientoJugadores = {
+  "Enzo Pérez": 11.5,
+  "Frank Fabra": 9.8,
+  "Nicolás De La Cruz": 12.3,
+  "Cristian Medina": 10.2,
+};
+function analizarRendimiento(players) {
+  let mvps = [];
+  let i = 0;
+  let playersPerformance = Object.entries(players);
+  while (i < playersPerformance.length) {
     if (playersPerformance[i][1] > 10) {
-      mvps.push(playersPerformance[i][0])
+      mvps.push(playersPerformance[i][0]);
     }
-    i++
+    i++;
   }
-  return mvps
+  return mvps;
 }
 
 let tarjetasPartido = {
-  'Ponzio' : {amarillas : 2, rojas : 4},
-  'Fabra' : {amarillas : 4, rojas : 1},
-}
-function resumenTarjetas(playersCards){
-  let i = 0
-  let playersAndCards = Object.entries(playersCards)
-  while(i < playersAndCards.length){
-    console.log(`El jugador ${playersAndCards[i][0]} recibio ${playersAndCards[i][1].amarillas} amarillas y ${playersAndCards[i][1].rojas} rojas` )
-    i++
+  Ponzio: { amarillas: 2, rojas: 4 },
+  Fabra: { amarillas: 4, rojas: 1 },
+};
+function resumenTarjetas(playersCards) {
+  let i = 0;
+  let playersAndCards = Object.entries(playersCards);
+  while (i < playersAndCards.length) {
+    console.log(
+      `El jugador ${playersAndCards[i][0]} recibio ${playersAndCards[i][1].amarillas} amarillas y ${playersAndCards[i][1].rojas} rojas`
+    );
+    i++;
   }
-  return
+  return;
 }
 
-let products = [{name : 'papa', price : 4444}, {name : 'cheluga', price : 555}]
-function calcularTotal(products){
-  let i = 0
-  let totalAmount = 0
-  while(i < products.length){
-    totalAmount += products[i].price
-    i++
+let products = [
+  { name: "papa", price: 4444 },
+  { name: "cheluga", price: 555 },
+];
+function calcularTotal(products) {
+  let i = 0;
+  let totalAmount = 0;
+  while (i < products.length) {
+    totalAmount += products[i].price;
+    i++;
   }
-  return `El precio total es: ${totalAmount}`
+  return `El precio total es: ${totalAmount}`;
 }
 
-let datosIngresados = ['pijurria', '     ', 'aaa']
+let datosIngresados = ["pijurria", "     ", "aaa"];
 function verifyEntries(enteredData) {
-  let valid = true
-  let i = 0
-  do{
-    if (enteredData[i].trim() === '') {
-      valid = false
+  let valid = true;
+  let i = 0;
+  do {
+    if (enteredData[i].trim() === "") {
+      valid = false;
     }
-    i++
-  }while(i<enteredData.length)
-  return valid ? 'Formulario valido' : 'Formulario invalido'
+    i++;
+  } while (i < enteredData.length);
+  return valid ? "Formulario valido" : "Formulario invalido";
 }
 
-let comentarios = [{name : 'papu', comentary : ':v'}, {name : 'pepe', comentary : 'aaaaaaa'}]
-function showComentarys(comentarys){
-  let i = 0
-  while(i < comentarys.length){
-    console.log(`${comentarys[i].name}: \n${comentarys[i].comentary}`)
-    i++
+let comentarios = [
+  { name: "papu", comentary: ":v" },
+  { name: "pepe", comentary: "aaaaaaa" },
+];
+function showComentarys(comentarys) {
+  let i = 0;
+  while (i < comentarys.length) {
+    console.log(`${comentarys[i].name}: \n${comentarys[i].comentary}`);
+    i++;
   }
-  return
+  return;
 }
 
 function simularProgreso() {
-  let progress = 0
-  let bar = ''
-  while(progress < 100){
-    progress += 10
-    bar += '----------'
-    console.log(`${bar} ${progress}%`)
+  let progress = 0;
+  let bar = "";
+  while (progress < 100) {
+    progress += 10;
+    bar += "----------";
+    console.log(`${bar} ${progress}%`);
   }
-  return
+  return;
 }
 
-let productos = [{name : 'papa', category : 'tuberculo', price : 44}, {name : 'cheluga', category : 'verdura', price : 22}]
+let productos = [
+  { name: "papa", category: "tuberculo", price: 44 },
+  { name: "cheluga", category: "verdura", price: 22 },
+];
 function filterByCategory(products, searchedCategory) {
-  let productsByCategory = []
-  let i = 0
-  while(i < products.length){
-    if (products[i].category === searchedCategory){
-      productsByCategory.push(products[i])
+  let productsByCategory = [];
+  let i = 0;
+  while (i < products.length) {
+    if (products[i].category === searchedCategory) {
+      productsByCategory.push(products[i]);
     }
-    i++
+    i++;
   }
-  return productsByCategory
+  return productsByCategory;
 }
