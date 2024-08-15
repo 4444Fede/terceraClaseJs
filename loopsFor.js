@@ -145,11 +145,11 @@ con calificaciones bajas (menos de 7), y break si encuentras un programa con una
 calificación perfecta de 10. Muestra el nombre del mejor programa en la consola.
 */
 let qualifiedPrograms = [
-  { 'AAAAA': 2 },
-  { 'ZZZZZ': 1 },
-  { 'mmmmmmmh': 8 },
-  { 'rrrrr': 9 },
-  { 'qweqeqweq': 9 },
+  { AAAAA: 2 },
+  { ZZZZZ: 1 },
+  { mmmmmmmh: 8 },
+  { rrrrr: 9 },
+  { qweqeqweq: 9 },
 ];
 function searchBestProgram(programasCalificados) {
   let program = [];
@@ -248,13 +248,13 @@ consola en el formato adecuado.
 */
 
 function makeMultiplicationTable(number) {
-  let result = 0
-  console.log(`La tabla del ${number}`)
-  for (let i = 1; i <= 10; i++){
-    result = number * i
-    console.log(`${number} x ${i}: ${result}`)
+  let result = 0;
+  console.log(`La tabla del ${number}`);
+  for (let i = 1; i <= 10; i++) {
+    result = number * i;
+    console.log(`${number} x ${i}: ${result}`);
   }
-  return
+  return;
 }
 
 /*
@@ -275,12 +275,12 @@ Ejemplo de salida para la entrada "Che, ¿vamos a la cancha?": "?ahcnac al
 a somav¿ ,ehC".
 */
 
-function paraEstarEnLaOndaComoDijoJose(message){
-  let invertedMessage = ''
+function paraEstarEnLaOndaComoDijoJose(message) {
+  let invertedMessage = "";
   for (let i = message.length - 1; i >= 0; i--) {
-    invertedMessage += message[i]
+    invertedMessage += message[i];
   }
-  return invertedMessage
+  return invertedMessage;
 }
 
 /*
@@ -299,21 +299,21 @@ La salida debe ser el valor máximo encontrado en el array.
 Ejemplo de salida para la entrada [3, 5, 7, 2, 8]: 8.
 */
 
-let clashRoyalePlays = [3, 5, 7, 8, 2]
-function findGenioMontapuercos(plays){
-  if (plays.length = 0) {
-    return `Ha pasado un array vacio`
+let clashRoyalePlays = [3, 5, 7, 8, 2];
+function findGenioMontapuercos(plays) {
+  if ((plays.length = 0)) {
+    return `Ha pasado un array vacio`;
   }
-  let bestPlayer = 0
-  let bestPlay = plays[0]
-  for(i = 1; i < plays.length; i++){
+  let bestPlayer = 0;
+  let bestPlay = plays[0];
+  for (i = 1; i < plays.length; i++) {
     if (bestPlay > plays[i]) {
-      continue
+      continue;
     }
-    bestPlayer = i
-    bestPlay = plays[i]
+    bestPlayer = i;
+    bestPlay = plays[i];
   }
-  return `${bestPlayer} se ha coronado como el nuevo genio montapuercos de los pibardos`
+  return `${bestPlayer} se ha coronado como el nuevo genio montapuercos de los pibardos`;
 }
 
 /*
@@ -343,40 +343,61 @@ estrellas).
 estrellas).
 */
 
-let playerCalifications = [1,5,5,5,null,4,3,4,2,1,1,null,6,7,4,5,5,5,5,5,5]
+let playerCalifications = [
+  1,
+  5,
+  5,
+  5,
+  null,
+  4,
+  3,
+  4,
+  2,
+  1,
+  1,
+  null,
+  6,
+  7,
+  4,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+];
 function ratePlayer(player) {
   if (player.length === 0) {
-    return `Ha pasado un array vacio`
+    return `Ha pasado un array vacio`;
   }
-  let countableRatings = 0
-  let promedy = 0
-  let promedyAproximate
-  let stars = ''
+  let countableRatings = 0;
+  let promedy = 0;
+  let promedyAproximate;
+  let stars = "";
   for (let i = player.length - 1; i >= 0; i--) {
-    if (player[i] === null || player[i] === undefined || player[i] > 5 || player[i] < 0) {
-      continue
+    if (
+      player[i] === null ||
+      player[i] === undefined ||
+      player[i] > 5 ||
+      player[i] < 0
+    ) {
+      continue;
     }
-    countableRatings++
-    promedy += player[i]
+    countableRatings++;
+    promedy += player[i];
   }
-  promedy /= countableRatings
-  promedyAproximate = Math.floor(promedy) + 0.5
+  promedy /= countableRatings;
+  promedyAproximate = Math.floor(promedy) + 0.5;
   if (promedy > promedyAproximate) {
-    promedyAproximate += 0.5
+    promedyAproximate += 0.5;
     for (let i = 0; i < promedyAproximate; i++) {
-      stars += '*'
+      stars += "*";
     }
-  }else{
-    promedyAproximate -= 0.5
+  } else {
+    promedyAproximate -= 0.5;
     for (let i = 0; i < promedyAproximate; i++) {
-      stars += '*'
+      stars += "*";
     }
   }
-  return `El jugador tiene un promedio de ${stars} estrellas`
+  return `El jugador tiene un promedio de ${stars} estrellas`;
 }
-
-
-
-
-
-
