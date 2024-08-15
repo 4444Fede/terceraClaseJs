@@ -298,42 +298,60 @@ function resumenTarjetas(playersCards){
   return
 }
 
+let products = [{name : 'papa', price : 4444}, {name : 'cheluga', price : 555}]
+function calcularTotal(products){
+  let i = 0
+  let totalAmount = 0
+  while(i < products.length){
+    totalAmount += products[i].price
+    i++
+  }
+  return `El precio total es: ${totalAmount}`
+}
 
+let datosIngresados = ['pijurria', '     ', 'aaa']
+function verifyEntries(enteredData) {
+  let valid = true
+  let i = 0
+  do{
+    if (enteredData[i].trim() === '') {
+      valid = false
+    }
+    i++
+  }while(i<enteredData.length)
+  return valid ? 'Formulario valido' : 'Formulario invalido'
+}
 
+let comentarios = [{name : 'papu', comentary : ':v'}, {name : 'pepe', comentary : 'aaaaaaa'}]
+function showComentarys(comentarys){
+  let i = 0
+  while(i < comentarys.length){
+    console.log(`${comentarys[i].name}: \n${comentarys[i].comentary}`)
+    i++
+  }
+  return
+}
 
+function simularProgreso() {
+  let progress = 0
+  let bar = ''
+  while(progress < 100){
+    progress += 10
+    bar += '----------'
+    console.log(`${bar} ${progress}%`)
+  }
+  return
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let productos = [{name : 'papa', category : 'tuberculo', price : 44}, {name : 'cheluga', category : 'verdura', price : 22}]
+function filterByCategory(products, searchedCategory) {
+  let productsByCategory = []
+  let i = 0
+  while(i < products.length){
+    if (products[i].category === searchedCategory){
+      productsByCategory.push(products[i])
+    }
+    i++
+  }
+  return productsByCategory
+}
