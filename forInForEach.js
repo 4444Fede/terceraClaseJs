@@ -375,25 +375,22 @@ const promociones = {
 
 function sendPromos(users, promos) {
   let promosScarfs = 0;
-  let promosCaps = 0;
-  let promosJersey = 0;
   let totalMailsSend = 0;
+  let appliedPromos = {};
+  let appliedPromosKeys = [];
   let promosKeys = Object.keys(promos);
   users.forEach(function (user) {
     if (user.preferencias.length > 0) {
       user.preferencias.forEach(function (preference) {
         if (promosKeys.includes(preference)) {
           console.log(
-            `Enviando correo a ${user.nombre} (${user.email}) sobre ${preference} \n-Promoción: ${promosKeys[preference]}`
+            `Enviando correo a ${user.nombre} (${user.email}) sobre ${preference} \n-Promoción: ${promos[preference]}`
           );
           totalMailsSend++;
-          switch (preference) {
-            case "Camisetas":
-              promosJersey++;
-            case "Bufandas":
-              promosScarfs++;
-            case "Gorras":
-              promosCaps++;
+          if (appliedPromos[preference]) {
+            appliedPromos += 1;
+          } else {
+            appliedPromos[preference] = 1;
           }
         } else {
           console.log(
@@ -408,7 +405,13 @@ function sendPromos(users, promos) {
     }
   });
   console.log(
-    `Total de correos enviados: ${totalMailsSend} \nPromociones aplicadas: \n- Camisetas: ${promosJersey} \n- Gorras: ${promosCaps} \n- Bufandas: ${promosScarfs}`
+    `Total de correos enviados: ${totalMailsSend} \nPromociones aplicadas:`
   );
+  appliedPromosKeys = Object.keys(appliedPromos);
+  for (let i = 0; i < appliedPromosKeys.length; i++) {
+    console.log(
+      `- ${appliedPromosKeys[i]}: ${appliedPromos[appliedPromosKeys[i]]}`
+    );
+  }
   return;
 }
